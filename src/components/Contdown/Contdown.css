@@ -1,0 +1,41 @@
+.contdown-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.temporizador{
+    font-size: 70px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.temporizador-texto{
+    font-size: 16px;
+}
+
+.temporizador-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 374px;
+    min-width: 374px;
+}
+
+.temporizador-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.col-margin-right{
+    margin-right: 16px;
+}
+
+.separador{
+    margin: 0 12px;
+}
+
