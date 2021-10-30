@@ -55,8 +55,9 @@
   box-shadow: -5px 13px 48px -4px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -5px 13px 48px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -5px 13px 48px -4px rgba(0, 0, 0, 0.75);
+ 
 }
 
-.c-black{
+.c-black {
   color: black;
 }

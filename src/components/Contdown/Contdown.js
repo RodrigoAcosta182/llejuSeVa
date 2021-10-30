@@ -2,24 +2,25 @@ import { useState, useRef, useEffect } from "react";
 import "./Contdown.css";
 
 const Contdown = () => {
-  const [timerDias, setTimerDias] = useState("00");
+  const [timerDias, setTimerDias] = useState("0");
   const [timerHoras, setTimerHoras] = useState("00");
   const [timerMinutos, setTimerMinutos] = useState("00");
   const [timerSegundos, setTimerSegundos] = useState("00");
+  const [mensaje, setMensaje] = useState("");
 
   let interval = useRef();
 
   const starTimer = () => {
     const countDownDate = new Date("Nov 05, 2021 17:00:00").getTime();
-    console.log(countDownDate);
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;
       const dias = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+      const horas = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutos = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((distance % (1000 * 60)) / 1000);
-
       if (distance < 0) {
       } else {
         setTimerDias(dias);
@@ -27,6 +28,9 @@ const Contdown = () => {
         setTimerMinutos(minutos);
         setTimerSegundos(segundos);
       }
+
+      if (dias === 0 && horas === 0 && minutos === 0 && segundos === 0)
+        setMensaje("FUE UN GUSTO CONOCERTE LLEJU");
     }, 1000);
   };
 
@@ -61,7 +65,9 @@ const Contdown = () => {
           <span className="temporizador-texto c-black">SEGUNDOS</span>
         </div>
       </div>
-      <span className="c-black">SE VA LLEJU</span>
+      <div className="mensaje">
+        <span className="c-black">{mensaje ? mensaje : "SE VA LLEJU"}</span>
+      </div>
     </div>
   );
 };

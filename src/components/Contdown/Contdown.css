@@ -38,4 +38,8 @@
 .separador{
     margin: 0 12px;
 }
-
+.mensaje{
+    max-width: 320px;
+    min-height: 68px;
+    max-height: 68px;
+}
